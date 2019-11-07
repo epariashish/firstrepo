@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css"href="css/style.css">
+
+</head>
+<h2 align="center"><strong>Welcome to Register Form </strong></h2>
+
+<body background="1.jpg" text="black">
+
+
+
+<ul>
+<li><a href="index.html">BACK</a></li>
+
+</ul>
+
+
+
+
+
+<script language="javascript">
+function fncSubmit()
+{
+	var pattern = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+if(document.Register.username.value == "")
+{
+alert('Please input name');
+document.Register.username.focus();
+return false;
+}
+
+if(document.Register.userdob.value == "")
+{
+alert('Please input valid date of birth DD-MM-YYYY');
+document.Register.userdob.focus();
+return false;
+}
+
+if(document.Register.useremail.value == "")
+{
+alert('Please input emailID/userID');
+document.Register.useremail.focus();
+return false;
+}
+
+if(document.Register.contact.value == "")
+{
+alert('Please input contact No');
+document.Register.contact.focus();
+return false;}
+	if(isNaN(document.Register.contact.value))
+	{alert("Phone no should contain numerics only");
+	return false;
+	}
+document.Register.submit();
+}
+</script>
+<form name="Register" action="Regi2.jsp" method="post" OnSubmit="return fncSubmit();">
+<table align="center">
+<center><b>
+<tr>
+
+<td>
+
+Name:</td> <td> <input type="text" pattern="" placeholder="your fullName" /><br/></br></td>
+ </tr>
+<tr>
+<td>
+DOB:   </td> <td><input type="date" name="userdob"> DD-MM-YYYY</br></br></td>
+</tr>
+
+<tr>
+<td>
+email:</td><td><input type="email" name="useremail"></br></br></td>
+<tr>
+<td>
+contact No: </td><td>+91-<input type="text" placeholder="" pattern=[6-9]{1}[0-9]{9} name="contact"></br></br></td>
+</tr>
+<tr>
+<td>
+new password: </td><td><input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase letter,and at least 6-9 characters" name="npassword"/><br/><br/></td>
+</tr>
+<tr>
+<td>
+Confirm Password: </td><td>  <input type="password"name="userpassword"/><br/><br/></td>
+</tr>
+
+<tr><td>
+
+country:</td>
+
+<td>
+<select name="country">
+<option>INDIA</option>
+<option>PAKISTAN</option>
+<option>AUSTRELLIA</option>
+<option>Others</option>
+</select>
+
+<br/><br/></td>
+<tr>
+<td>
+<input type="submit" value="Register"/></td>
+<td><input type="reset" value="reset"/></td>
+
+</center>
+</table>
+</form>
+</body>
+</html>
